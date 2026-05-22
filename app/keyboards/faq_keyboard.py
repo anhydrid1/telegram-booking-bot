@@ -1,5 +1,6 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+# Клавиатура, которая отображается после нажатия на кнопку FAQ в ГМ
 faq_kb = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='🗓 Запись и время', callback_data='signin_time')],
     [InlineKeyboardButton(text='💇‍♀️ Услуги', callback_data='services_info')],

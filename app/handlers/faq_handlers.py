@@ -4,6 +4,7 @@ import app.keyboards.back_keyboard as kb_back
 
 faq_router = Router()
 
+# Хэндлер для faq для вопросов о записи и времени
 @faq_router.callback_query(F.data == 'signin_time')
 async def signin_time_cmd(callback: CallbackQuery):
     await callback.answer('Запись и время')
@@ -25,7 +26,7 @@ async def signin_time_cmd(callback: CallbackQuery):
                                      parse_mode='HTML',
                                      reply_markup=kb_back.back_faq_kb)
 
-
+# Хэндлер для вопросов об услугах
 @faq_router.callback_query(F.data == 'services_info')
 async def services_info_cmd(callback: CallbackQuery):
     await callback.answer('Услуги')
@@ -44,7 +45,7 @@ async def services_info_cmd(callback: CallbackQuery):
                                      parse_mode='HTML',
                                      reply_markup=kb_back.back_faq_kb)
 
-
+# Хэндлер для вопросов об опазданиях
 @faq_router.callback_query(F.data == 'late')
 async def late_cmd(callback: CallbackQuery):
     await callback.answer('Опоздания и неявки')
@@ -64,7 +65,7 @@ async def late_cmd(callback: CallbackQuery):
                                      parse_mode='HTML',
                                      reply_markup=kb_back.back_faq_kb)
 
-
+# Хэндлер для вопросов о консультациях
 @faq_router.callback_query(F.data == 'consultation_faq')
 async def consultation_faq_cmd(callback: CallbackQuery):
     await callback.answer('Консультации и особые случаи')
@@ -83,7 +84,7 @@ async def consultation_faq_cmd(callback: CallbackQuery):
                                      parse_mode='HTML',
                                      reply_markup=kb_back.back_faq_kb)
 
-
+# Хэндлер для помощи
 @faq_router.callback_query(F.data == 'help')
 async def help_cmd(callback: CallbackQuery):
     await callback.answer('Помощь')

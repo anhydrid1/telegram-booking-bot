@@ -1,5 +1,6 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+# Клавиатура, которая отображается после нажатия на выбор услуг в ГМ
 services_kb = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='💇‍♂️ Стрижка', callback_data='hair')],
     [InlineKeyboardButton(text='💅 Маникюр', callback_data='manicure')],

@@ -6,12 +6,12 @@ import app.keyboards.faq_keyboard as kb_faq
 
 menu_router = Router()
 
-
+# Хэндлер на запись на прием и тп
 @menu_router.callback_query(F.data == 'signin')
 async def signin_cmd(callback: CallbackQuery):
     await callback.answer('Запись')
 
-
+# Хэндлер на просмотр различных услуг
 @menu_router.callback_query(F.data == 'services')
 async def services_cmd(callback: CallbackQuery):
     await callback.answer('Услуги')
@@ -19,7 +19,7 @@ async def services_cmd(callback: CallbackQuery):
                                   parse_mode='HTML',
                                   reply_markup=kb.services_kb)
 
-
+# Хэндлер на контакты компании
 @menu_router.callback_query(F.data == 'contacts')
 async def contacts_cmd(callback: CallbackQuery):
     await callback.answer('Контакты')
@@ -30,7 +30,7 @@ async def contacts_cmd(callback: CallbackQuery):
                                      reply_markup=kb_back.back_kb
                                      )
 
-
+# Хэндлер на часто задаваемые вопросы
 @menu_router.callback_query(F.data == 'faq')
 async def faq_cmd(callback: CallbackQuery):
     await callback.answer('FAQ')

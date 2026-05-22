@@ -4,6 +4,7 @@ import app.keyboards.menu_keyboard as kb
 
 basic_router = Router()
 
+# Начальная команда при запуске бота
 @basic_router.message(Command('start'))
 async def start_cmd(message: types.Message):
     await message.answer(f'<b>Здравствуйте</b>, {message.from_user.full_name}!\n'
