@@ -1,6 +1,6 @@
 from aiogram import types, Router
 from aiogram.filters.command import Command
-import app.keyboards.menu_keyboard as kb
+import myapp.keyboards.menu_keyboard as kb
 
 basic_router = Router()
 

@@ -2,10 +2,10 @@ from aiogram import Router, F
 from aiogram import types
 from aiogram.types import CallbackQuery, ReplyKeyboardRemove
 
-import app.keyboards.services_kb_for_fsm_for_c as fsm_kb_for_c
-import app.keyboards.services_kb_for_fsm as fsm_kb_service
+import myapp.keyboards.services_kb_for_fsm_for_c as fsm_kb_for_c
+import myapp.keyboards.services_kb_for_fsm as fsm_kb_service
 
-from app.states.fsm_signin import Reg
+from myapp.states.fsm_signin import Reg
 from aiogram.fsm.context import FSMContext
 
 fsm_router = Router()

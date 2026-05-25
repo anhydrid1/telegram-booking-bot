@@ -1,6 +1,6 @@
 from aiogram import Router, F
 from aiogram.types import CallbackQuery
-import app.keyboards.back_keyboard as kb_back
+import myapp.keyboards.back_keyboard as kb_back
 
 faq_router = Router()
 
