@@ -4,6 +4,7 @@ from aiogram.types import CallbackQuery, ReplyKeyboardRemove
 
 import myapp.keyboards.services_kb_for_fsm_for_c as fsm_kb_for_c
 import myapp.keyboards.services_kb_for_fsm as fsm_kb_service
+import myapp.keyboards.menu_keyboard as menu_keyboard
 
 from myapp.states.fsm_signin import Reg
 from aiogram.fsm.context import FSMContext
@@ -53,4 +54,8 @@ async def reg_five(message: types.Message, state: FSMContext):
     await state.update_data(confirmation=message.text)
     await message.answer('Спасибо за успешную запись!',
                          reply_markup=ReplyKeyboardRemove())
+
+    await message.answer('Главное меню',
+                         reply_markup=menu_keyboard.menu_kb)
+
     await state.clear()

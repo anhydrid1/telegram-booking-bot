@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     DB_PASS: str
     DB_NAME: str
 
+#Создание и получение ссылки на БД
     @property
     def database_url(self):
         #postgresql+asyncpg://postgres:postgres@localhost:5432/postgres
