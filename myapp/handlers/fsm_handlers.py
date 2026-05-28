@@ -5,6 +5,8 @@ from aiogram.types import CallbackQuery, ReplyKeyboardRemove
 import myapp.keyboards.services_kb_for_fsm_for_c as fsm_kb_for_c
 import myapp.keyboards.services_kb_for_fsm as fsm_kb_service
 import myapp.keyboards.menu_keyboard as menu_keyboard
+import myapp.keyboards.date_keyboard as date_kb
+import myapp.keyboards.time_keyboard as time_kb
 
 from myapp.states.fsm_signin import Reg
 from aiogram.fsm.context import FSMContext
@@ -25,14 +27,15 @@ async def reg_two(message: types.Message, state: FSMContext):
     await state.update_data(service=message.text)
     await state.set_state(Reg.data_t)
     await message.answer('Выберите свободную дату',
-                         reply_markup=ReplyKeyboardRemove())
+                         reply_markup=date_kb.date_keyboard)
 
 
 @fsm_router.message(Reg.data_t)
 async def reg_three(message: types.Message, state: FSMContext):
     await state.update_data(data_t=message.text)
     await state.set_state(Reg.time)
-    await message.answer('Выберите свободное время')
+    await message.answer('Выберите свободное время',
+                         reply_markup=time_kb.time_keyboard)
 
 
 @fsm_router.message(Reg.time)
