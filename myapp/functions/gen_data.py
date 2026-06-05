@@ -1,5 +1,5 @@
 from datetime import date, timedelta
-
+# Генерация дат 7 дней недели, начиная с настоящего времени
 today = date.today()
 
 dates_between = [

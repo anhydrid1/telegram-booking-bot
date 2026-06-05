@@ -1,5 +1,5 @@
-from datetime import datetime, timedelta, time
-
+from datetime import datetime, timedelta
+# Генерация врмени с 10:00 до 18:00, каждый час
 def gen_time_slots():
 
     start_time = datetime.strptime(

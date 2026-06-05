@@ -9,7 +9,7 @@ from myapp.database.models import User
 
 users_router = Router()
 
-
+# Добавление пользователя в БД
 @users_router.message(CommandStart())
 async def cmd_start(message: Message):
 
